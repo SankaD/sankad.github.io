@@ -5,24 +5,22 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description"
-        content="Sanka Darshana — Rust & Blockchain Developer, FinTech Engineer, and Musician. Crafting performant systems and Sri Lankan music." />
+        content="Sanka Darshana - software engineer and musician from Sri Lanka, building exact systems and original songs." />
     <meta name="author" content="Sanka Darshana" />
 
-    <!-- Open Graph -->
-    <meta property="og:title" content="Sanka Darshana — Developer & Musician" />
-    <meta property="og:description" content="Rust · Blockchain · FinTech · Sri Lankan Music" />
+    <meta property="og:title" content="Sanka Darshana" />
+    <meta property="og:description"
+        content="Software engineer and musician from Sri Lanka. Explore engineering work and original music." />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://sankadarshana.com" />
 
     <link rel="canonical" href="https://sankadarshana.com" />
-    <!-- Fonts (self-host fallback: system fonts in CSS variables) -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600;700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400..700;1,400..700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;600&family=Space+Grotesk:wght@500;600&display=swap"
         rel="stylesheet" />
 
-    <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
         integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -30,19 +28,15 @@
     <link rel="stylesheet" href="css/style.css" />
 </head>
 
-<body>
+<body data-page="home">
 
-    <!-- ════════════════════════════════════════════
-       NAVIGATION
-  ════════════════════════════════════════════ -->
     <nav class="nav" role="navigation" aria-label="Main navigation">
-        <a href="#home" class="nav__logo">sanka<span>darshana.com</span></a>
+        <a href="index.html" class="nav__logo">sanka<span>darshana.com</span></a>
 
         <ul class="nav__links" role="list">
-            <li><a href="#home" data-section="home">Home</a></li>
-            <li><a href="#about" data-section="about">About</a></li>
-            <li><a href="#developer" data-section="developer">Developer</a></li>
-            <li><a href="#musician" data-section="musician">Musician</a></li>
+            <li><a href="index.html" data-page-link="home">Home</a></li>
+            <li><a href="tech.html" data-page-link="tech">Tech</a></li>
+            <li><a href="music.html" data-page-link="music">Music</a></li>
         </ul>
 
         <button class="nav__burger" aria-label="Open menu" aria-expanded="false">
@@ -52,346 +46,103 @@
         </button>
     </nav>
 
-    <!-- Mobile drawer -->
     <nav class="nav__mobile" aria-label="Mobile navigation">
-        <a href="#home" data-section="home">Home</a>
-        <a href="#about" data-section="about">About</a>
-        <a href="#developer" data-section="developer">Developer</a>
-        <a href="#musician" data-section="musician">Musician</a>
+        <a href="index.html" data-page-link="home">Home</a>
+        <a href="tech.html" data-page-link="tech">Tech</a>
+        <a href="music.html" data-page-link="music">Music</a>
     </nav>
 
+    <div class="backdrop" aria-hidden="true">
+        <div class="backdrop__glow backdrop__glow--a"></div>
+        <div class="backdrop__glow backdrop__glow--b"></div>
+        <div class="backdrop__grid"></div>
+        <div class="backdrop__grain"></div>
+    </div>
+
     <main>
+        <section id="home" class="home-hero" aria-label="Home">
 
-        <!-- ════════════════════════════════════════════
-         HOME / HERO
-    ════════════════════════════════════════════ -->
-        <section id="home" aria-label="Home">
-            <div class="hero__grid-bg" aria-hidden="true"></div>
-            <div class="hero__glow" aria-hidden="true"></div>
-            <div class="hero__glow--music hero__glow" aria-hidden="true"></div>
+            <div class="home-hero__layout">
+                <div class="home-hero__copy">
+                    <div class="hero__eyebrow fade-in">Sri Lanka &middot; Engineering &middot; Music</div>
 
-            <div class="hero__content">
-                <div class="hero__eyebrow fade-in">Available for projects &amp; collaborations</div>
+                    <h1 class="hero__name fade-in fade-in-delay-1">
+                        <span>Sanka</span>
+                        <span>Darshana</span>
+                    </h1>
 
-                <h1 class="hero__name fade-in fade-in-delay-1">
-                    <span>Sanka</span>
-                    <span>Darshana.</span>
-                </h1>
+                    <p class="hero__roles fade-in fade-in-delay-2">
+                        <span class="typed-text"></span><span class="cursor" aria-hidden="true"></span>
+                    </p>
 
-                <p class="hero__roles fade-in fade-in-delay-2">
-                    <span class="typed-text"></span><span class="cursor" aria-hidden="true"></span>
-                </p>
+                    <p class="hero__bio fade-in fade-in-delay-3">
+                        I am a software engineer and musician from Sri Lanka. My work moves between precise
+                        technical systems and expressive songs, with the same focus on structure, clarity,
+                        and craft.
+                    </p>
 
-                <p class="hero__bio fade-in fade-in-delay-3">
-                    I build <strong>high-performance backend systems</strong> with Rust, architect
-                    <strong>blockchain &amp; FinTech solutions</strong>, and create
-                    <strong>Sri Lankan &amp; English pop music</strong> that bridges two worlds.
-                    Code and music are both languages — I speak both fluently.
-                </p>
+                    <div class="home-hero__actions fade-in fade-in-delay-4">
+                        <a href="tech.html" class="btn btn--dev">
+                            <i class="fa-solid fa-code"></i> Tech Work
+                        </a>
+                        <a href="music.html" class="btn btn--music">
+                            <i class="fa-solid fa-music"></i> Music
+                        </a>
+                    </div>
 
-                <div class="hero__ctas fade-in fade-in-delay-4">
-                    <a href="#developer" class="btn btn--dev">
-                        <i class="fa-solid fa-code"></i> View Dev Work
-                    </a>
-                    <a href="#musician" class="btn btn--music">
-                        <i class="fa-solid fa-music"></i> My Music
-                    </a>
-                    <a href="#about" class="btn btn--outline">
-                        About Me
-                    </a>
+                    <div class="home-hero__social fade-in fade-in-delay-4" aria-label="Social links">
+                        <a href="https://github.com/SankaD" aria-label="GitHub" title="GitHub" target="_blank"
+                            rel="noopener"><i class="fa-brands fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/sankadarshana/" aria-label="LinkedIn" title="LinkedIn"
+                            target="_blank" rel="noopener"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="https://twitter.com/SankaD" aria-label="Twitter/X" title="Twitter/X" target="_blank"
+                            rel="noopener"><i class="fa-brands fa-x-twitter"></i></a>
+                        <a href="https://www.youtube.com/@sanka-darshana" aria-label="YouTube" title="YouTube"
+                            target="_blank" rel="noopener"><i class="fa-brands fa-youtube"></i></a>
+                    </div>
                 </div>
-            </div>
 
-            <div class="hero__scroll" aria-hidden="true">scroll</div>
-        </section>
-
-        <!-- ════════════════════════════════════════════
-         ABOUT
-    ════════════════════════════════════════════ -->
-        <section id="about" aria-label="About me">
-            <div class="about__inner">
-
-                <div class="about__avatar-wrap fade-in">
-                    <div class="about__avatar" role="img" aria-label="Sanka Darshana">
+                <aside class="home-hero__visual fade-in fade-in-delay-2" aria-label="Portrait">
+                    <div class="home-portrait">
                         <img src="assets/profile.jpg" alt="Sanka Darshana" />
+                        <div class="home-portrait__label">
+                            <span>Personal site</span>
+                            <strong>Selected work across tech and music.</strong>
+                        </div>
                     </div>
-                    <div class="about__social-mini">
-                        <a href="https://github.com/SankaD" class="github" aria-label="GitHub" title="GitHub"
-                            target="_blank" rel="noopener"><i class="fa-brands fa-github"></i></a>
-                        <a href="https://www.linkedin.com/in/sankadarshana/" class="linkedin" aria-label="LinkedIn"
-                            title="LinkedIn" target="_blank" rel="noopener"><i class="fa-brands fa-linkedin-in"></i></a>
-                        <a href="https://twitter.com/SankaD" class="twitter" aria-label="Twitter/X" title="Twitter/X"
-                            target="_blank" rel="noopener"><i class="fa-brands fa-x-twitter"></i></a>
-                        <a href="https://www.youtube.com/@sanka-darshana" class="youtube" aria-label="YouTube"
-                            title="YouTube" target="_blank" rel="noopener"><i class="fa-brands fa-youtube"></i></a>
-                        <a href="#" class="spotify" aria-label="Spotify" title="Spotify" target="_blank"
-                            rel="noopener"><i class="fa-brands fa-spotify"></i></a>
-                        <a href="#" class="instagram" aria-label="Instagram" title="Instagram" target="_blank"
-                            rel="noopener"><i class="fa-brands fa-instagram"></i></a>
+                    <div class="home-signal" aria-hidden="true">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
                     </div>
-                </div>
-
-                <div class="about__text">
-                    <p class="section-label fade-in">get to know me</p>
-                    <h2 class="section-title fade-in fade-in-delay-1">
-                        Developer by day,<br><em class="music-em">musician</em> by night.
-                    </h2>
-
-                    <p class="fade-in fade-in-delay-2">
-                        Hi, I'm <strong>Sanka Darshana</strong> — a software engineer based in Sri Lanka
-                        with a deep passion for building systems that are both <strong>blazingly fast</strong>
-                        and <strong>genuinely useful</strong>. I specialise in backend development using
-                        <strong>Rust</strong>, working across <strong>blockchain protocols</strong> and
-                        <strong>FinTech infrastructure</strong>.
-                    </p>
-
-                    <p class="fade-in fade-in-delay-3">
-                        Outside of code, I wear a completely different hat. I write and produce
-                        <strong>Sri Lankan music</strong> rooted in our culture, alongside
-                        <strong>English pop songs</strong> that I hope connect with listeners around the world.
-                        Music is my way of expressing what code can't.
-                    </p>
-
-                    <p class="fade-in fade-in-delay-4">
-                        I believe the most interesting people stand at the intersection of
-                        <strong>logic and creativity</strong> — and that's the space I try to live in every day.
-                    </p>
-
-                    <div class="about__tags fade-in">
-                        <span class="tag tag--dev">Rust</span>
-                        <span class="tag tag--dev">Blockchain</span>
-                        <span class="tag tag--dev">FinTech</span>
-                        <span class="tag tag--dev">Backend</span>
-                        <span class="tag tag--music">Sri Lankan Music</span>
-                        <span class="tag tag--music">Pop</span>
-                        <span class="tag tag--neutral">Open Source</span>
-                        <span class="tag tag--neutral">Sri Lanka 🇱🇰</span>
-                    </div>
-                </div>
-
+                </aside>
             </div>
         </section>
 
-        <!-- ════════════════════════════════════════════
-         DEVELOPER PORTFOLIO
-    ════════════════════════════════════════════ -->
-        <section id="developer" aria-label="Developer portfolio">
-
-            <div class="dev__header">
-                <p class="section-label fade-in">craft &amp; code</p>
-                <h2 class="section-title fade-in fade-in-delay-1">
-                    Developer <em>Portfolio</em>
-                </h2>
-                <p class="section-desc fade-in fade-in-delay-2">
-                    I specialise in building robust, high-performance systems — from low-level
-                    Rust services to complex blockchain protocols and FinTech platforms.
-                </p>
-            </div>
-
-            <!-- Skills -->
-            <div class="skills__grid fade-in" aria-label="Skills">
-                <span class="skill-badge">Rust</span>
-                <span class="skill-badge">Tokio / Async</span>
-                <span class="skill-badge">WebAssembly</span>
-                <span class="skill-badge">Blockchain / DLT</span>
-                <span class="skill-badge">Layer 1 Protocol</span>
-                <span class="skill-badge">Web3</span>
-                <span class="skill-badge">Smart Contracts</span>
-                <span class="skill-badge">TypeScript</span>
-                <span class="skill-badge">JavaScript</span>
-                <span class="skill-badge">Node.js</span>
-                <span class="skill-badge">Next.js</span>
-                <span class="skill-badge">Firebase</span>
-                <span class="skill-badge">PostgreSQL</span>
-                <span class="skill-badge">Docker</span>
-                <span class="skill-badge">Linux</span>
-                <span class="skill-badge">CI/CD</span>
-            </div>
-
-            <!-- Projects -->
-            <div class="projects__grid" role="list">
-
-                <article class="project-card fade-in" role="listitem">
-                    <div class="project-card__head">
-                        <span class="project-card__icon" aria-hidden="true">⛓️</span>
-                        <div class="project-card__links">
-                            <a href="https://github.com/SaitoTech/saito-rust-workspace" aria-label="GitHub repository"
-                                title="View on GitHub" target="_blank" rel="noopener"><i
-                                    class="fa-brands fa-github"></i></a>
-                            <a href="https://saitotech.github.io/saito-rust-workspace/" aria-label="API Docs"
-                                title="API Docs" target="_blank" rel="noopener"><i
-                                    class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                        </div>
-                    </div>
-                    <h3 class="project-card__title">Saito Rust Workspace</h3>
-                    <p class="project-card__desc">
-                        Cargo workspace implementing <strong>Saito Consensus</strong> in Rust — the core blockchain
-                        engine powering the network. Contains saito-core (consensus logic), saito-rust (network &amp;
-                        storage), and saito-wasm (cross-platform WASM build).
+        <section class="home-intro" aria-label="Introduction">
+            <div class="home-intro__inner">
+                <article class="home-intro__card fade-in">
+                    <span>Technology</span>
+                    <h2>Systems, protocols, and product infrastructure.</h2>
+                    <p>
+                        A focused page for engineering work, project notes, tools, and technical strengths.
                     </p>
-                    <div class="project-card__tags">
-                        <span class="tag tag--dev">Rust</span>
-                        <span class="tag tag--dev">WebAssembly</span>
-                        <span class="tag tag--dev">Layer 1</span>
-                        <span class="tag tag--dev">Tokio</span>
-                    </div>
+                    <a href="tech.html" class="text-link">Open tech page <i class="fa-solid fa-arrow-right"></i></a>
                 </article>
 
-                <article class="project-card fade-in fade-in-delay-1" role="listitem">
-                    <div class="project-card__head">
-                        <span class="project-card__icon" aria-hidden="true">🌐</span>
-                        <div class="project-card__links">
-                            <a href="https://github.com/SaitoTech/saito" aria-label="GitHub repository"
-                                title="View on GitHub" target="_blank" rel="noopener"><i
-                                    class="fa-brands fa-github"></i></a>
-                            <a href="https://saito.io" aria-label="Live site" title="saito.io" target="_blank"
-                                rel="noopener"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                        </div>
-                    </div>
-                    <h3 class="project-card__title">Saito — Layer 1 Blockchain</h3>
-                    <p class="project-card__desc">
-                        Self-sufficient <strong>Layer 1 blockchain</strong> built for massive-scale decentralised apps
-                        without compromising openness. Eliminates miner &amp; validator centralisation by paying network
-                        nodes directly from transaction fees.
+                <article class="home-intro__card home-intro__card--music fade-in fade-in-delay-1">
+                    <span>Music</span>
+                    <h2>Songwriting shaped by language and place.</h2>
+                    <p>
+                        A dedicated page for music direction, writing lanes, and original creative work.
                     </p>
-                    <div class="project-card__tags">
-                        <span class="tag tag--dev">Web3</span>
-                        <span class="tag tag--dev">JavaScript</span>
-                        <span class="tag tag--dev">DLT</span>
-                        <span class="tag tag--dev">P2P</span>
-                    </div>
+                    <a href="music.html" class="text-link">Open music page <i class="fa-solid fa-arrow-right"></i></a>
                 </article>
-
-                <article class="project-card fade-in fade-in-delay-2" role="listitem">
-                    <div class="project-card__head">
-                        <span class="project-card__icon" aria-hidden="true">🧠</span>
-                        <div class="project-card__links">
-                            <a href="https://github.com/SankaD/Riyadisi" aria-label="GitHub repository"
-                                title="View on GitHub" target="_blank" rel="noopener"><i
-                                    class="fa-brands fa-github"></i></a>
-                        </div>
-                    </div>
-                    <h3 class="project-card__title">Riyadisi — Driver Safety AI</h3>
-                    <p class="project-card__desc">
-                        Final year project at <strong>University of Moratuwa (CSE)</strong> — a real-time driver
-                        drowsiness and distraction detection system using computer vision, designed to prevent road
-                        accidents.
-                    </p>
-                    <div class="project-card__tags">
-                        <span class="tag tag--dev">C</span>
-                        <span class="tag tag--dev">Computer Vision</span>
-                        <span class="tag tag--dev">AI / ML</span>
-                        <span class="tag tag--dev">Embedded</span>
-                    </div>
-                </article>
-
             </div>
         </section>
-
-        <!-- ════════════════════════════════════════════
-         MUSICIAN PORTFOLIO
-    ════════════════════════════════════════════ -->
-        <section id="musician" aria-label="Musician portfolio">
-
-            <div class="music__header">
-                <p class="section-label section-label--music fade-in">sounds &amp; stories</p>
-                <h2 class="section-title fade-in fade-in-delay-1">
-                    Musician <em class="music-em">Portfolio</em>
-                </h2>
-                <p class="section-desc fade-in fade-in-delay-2">
-                    Music is my second language. I create Sri Lankan songs rooted in our culture
-                    and English pop tracks that reach beyond borders — produced, written, and
-                    performed by me.
-                </p>
-                <div class="music__genre-tags fade-in fade-in-delay-3">
-                    <span class="genre-badge">Sri Lankan Music</span>
-                    <span class="genre-badge">Sinhala Pop</span>
-                    <span class="genre-badge">English Pop</span>
-                    <span class="genre-badge">Original Songs</span>
-                    <span class="genre-badge">Singer-Songwriter</span>
-                </div>
-            </div>
-
-            <div class="music__grid" role="list">
-
-                <article class="music-card fade-in" role="listitem">
-                    <div class="music-card__cover" aria-hidden="true">🎵</div>
-                    <div class="music-card__body">
-                        <span class="music-card__type">Single · Sinhala Pop</span>
-                        <h3 class="music-card__title">Original Sinhala Single</h3>
-                        <p class="music-card__desc">
-                            A heartfelt Sri Lankan pop track blending traditional melodic sensibility
-                            with contemporary production. Update this with your real release details.
-                        </p>
-                        <div class="music-card__streams">
-                            <a href="#" class="stream-btn" aria-label="Listen on Spotify" target="_blank"
-                                rel="noopener">
-                                <i class="fa-brands fa-spotify"></i> Spotify
-                            </a>
-                            <a href="https://www.youtube.com/@sanka-darshana" class="stream-btn"
-                                aria-label="Watch on YouTube" target="_blank" rel="noopener">
-                                <i class="fa-brands fa-youtube"></i> YouTube
-                            </a>
-                        </div>
-                    </div>
-                </article>
-
-                <article class="music-card fade-in fade-in-delay-1" role="listitem">
-                    <div class="music-card__cover" aria-hidden="true">🎶</div>
-                    <div class="music-card__body">
-                        <span class="music-card__type">Single · English Pop</span>
-                        <h3 class="music-card__title">English Pop Single</h3>
-                        <p class="music-card__desc">
-                            An English pop song written and produced from Sri Lanka, aiming to connect
-                            with an international audience. Update this with your real release details.
-                        </p>
-                        <div class="music-card__streams">
-                            <a href="#" class="stream-btn" aria-label="Listen on Spotify" target="_blank"
-                                rel="noopener">
-                                <i class="fa-brands fa-spotify"></i> Spotify
-                            </a>
-                            <a href="https://www.youtube.com/@sanka-darshana" class="stream-btn"
-                                aria-label="Watch on YouTube" target="_blank" rel="noopener">
-                                <i class="fa-brands fa-youtube"></i> YouTube
-                            </a>
-                        </div>
-                    </div>
-                </article>
-
-                <article class="music-card fade-in fade-in-delay-2" role="listitem">
-                    <div class="music-card__cover" aria-hidden="true">🎼</div>
-                    <div class="music-card__body">
-                        <span class="music-card__type">EP · Mixed</span>
-                        <h3 class="music-card__title">Debut EP</h3>
-                        <p class="music-card__desc">
-                            A collection of tracks exploring both Sri Lankan and pop influences —
-                            a sonic diary of two identities. Update this with your real release details.
-                        </p>
-                        <div class="music-card__streams">
-                            <a href="#" class="stream-btn" aria-label="Listen on Spotify" target="_blank"
-                                rel="noopener">
-                                <i class="fa-brands fa-spotify"></i> Spotify
-                            </a>
-                            <a href="https://www.youtube.com/@sanka-darshana" class="stream-btn"
-                                aria-label="Watch on YouTube" target="_blank" rel="noopener">
-                                <i class="fa-brands fa-youtube"></i> YouTube
-                            </a>
-                            <a href="#" class="stream-btn" aria-label="Follow on Instagram" target="_blank"
-                                rel="noopener">
-                                <i class="fa-brands fa-instagram"></i> Instagram
-                            </a>
-                        </div>
-                    </div>
-                </article>
-
-            </div>
-        </section>
-
     </main>
 
-    <!-- ════════════════════════════════════════════
-       FOOTER
-  ════════════════════════════════════════════ -->
     <footer>
         <div class="footer__social" aria-label="Social links">
             <a href="https://github.com/SankaD" class="github" aria-label="GitHub" title="GitHub" target="_blank"
@@ -402,16 +153,12 @@
                 target="_blank" rel="noopener"><i class="fa-brands fa-x-twitter"></i></a>
             <a href="https://www.youtube.com/@sanka-darshana" class="youtube" aria-label="YouTube" title="YouTube"
                 target="_blank" rel="noopener"><i class="fa-brands fa-youtube"></i></a>
-            <a href="#" class="spotify" aria-label="Spotify" title="Spotify" target="_blank" rel="noopener"><i
-                    class="fa-brands fa-spotify"></i></a>
-            <a href="#" class="instagram" aria-label="Instagram" title="Instagram" target="_blank" rel="noopener"><i
-                    class="fa-brands fa-instagram"></i></a>
         </div>
 
         <div class="footer__divider" aria-hidden="true"></div>
 
         <p class="footer__copy">
-            &copy; 2026 <a href="#home">Sanka Darshana</a> &mdash; Built with &hearts; in Sri Lanka
+            &copy; 2026 <a href="index.html">Sanka Darshana</a> &mdash; Built with &hearts; in Sri Lanka
         </p>
     </footer>
 

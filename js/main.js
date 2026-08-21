@@ -1,10 +1,10 @@
 /* ─── Typing animation ─────────────────────────────────────── */
 const roles = [
-  'Rust Developer',
-  'Blockchain Engineer',
-  'FinTech Builder',
-  'Backend Architect',
-  'Musician & Composer',
+  'Software engineer',
+  'Systems builder',
+  'Musician',
+  'Songwriter',
+  'Creative technologist',
 ];
 
 const typedEl = document.querySelector('.typed-text');
@@ -13,7 +13,6 @@ if (typedEl) {
   let roleIndex   = 0;
   let charIndex   = 0;
   let isDeleting  = false;
-  let isPaused    = false;
 
   function type() {
     const current = roles[roleIndex];
@@ -29,11 +28,11 @@ if (typedEl) {
     let delay = isDeleting ? 55 : 90;
 
     if (!isDeleting && charIndex === current.length) {
-      // finished typing — pause then delete
+      // Finished typing, then pause before deleting.
       delay = 1800;
       isDeleting = true;
     } else if (isDeleting && charIndex === 0) {
-      // finished deleting — move to next role
+      // Finished deleting, then move to the next role.
       isDeleting = false;
       roleIndex = (roleIndex + 1) % roles.length;
       delay = 350;
@@ -45,39 +44,22 @@ if (typedEl) {
   type();
 }
 
-/* ─── Sticky nav border + active link highlighting ────────── */
+/* ─── Navigation state ─────────────────────────────────────── */
 const nav        = document.querySelector('.nav');
 const navLinks   = document.querySelectorAll('.nav__links a, .nav__mobile a');
-const sections   = document.querySelectorAll('section[id]');
+const currentPage = document.body.dataset.page || 'home';
 
 function onScroll() {
-  // scrolled border
-  if (window.scrollY > 10) {
-    nav.classList.add('scrolled');
-  } else {
-    nav.classList.remove('scrolled');
-  }
-
-  // active section
-  let current = '';
-  sections.forEach(section => {
-    const sectionTop = section.offsetTop - 100;
-    if (window.scrollY >= sectionTop) {
-      current = section.getAttribute('id');
-    }
-  });
-
-  navLinks.forEach(link => {
-    link.classList.remove('active');
-    if (link.getAttribute('href') === `#${current}`) {
-      link.classList.add('active');
-    }
-  });
+  if (!nav) return;
+  nav.classList.toggle('scrolled', window.scrollY > 10);
 }
 
 window.addEventListener('scroll', onScroll, { passive: true });
-// Run immediately to set initial state
 onScroll();
+
+navLinks.forEach(link => {
+  link.classList.toggle('active', link.dataset.pageLink === currentPage);
+});
 
 /* ─── Smooth scroll on nav link click ─────────────────────── */
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -88,9 +70,11 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     if (!target) return;
     e.preventDefault();
 
-    // close mobile nav if open
-    burgerBtn.classList.remove('open');
-    mobileNav.classList.remove('open');
+    if (burgerBtn && mobileNav) {
+      burgerBtn.classList.remove('open');
+      mobileNav.classList.remove('open');
+      burgerBtn.setAttribute('aria-expanded', 'false');
+    }
 
     target.scrollIntoView({ behavior: 'smooth', block: 'start' });
   });
@@ -109,7 +93,7 @@ if (burgerBtn && mobileNav) {
 
   // Close mobile nav on outside click
   document.addEventListener('click', e => {
-    if (!nav.contains(e.target)) {
+    if (!nav.contains(e.target) && !mobileNav.contains(e.target)) {
       burgerBtn.classList.remove('open');
       mobileNav.classList.remove('open');
       burgerBtn.setAttribute('aria-expanded', 'false');
